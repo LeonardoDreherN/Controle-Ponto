@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Ponto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Controle de Ponto</h1>
+            <div class="current-time">
+                <p id="current-date"></p>
+                <p id="current-time" class="time-display"></p>
+            </div>
+        </header>
+
+        <!-- Identificação do Funcionário -->
+        <div class="card">
+            <h2>👤 Identificação do Funcionário</h2>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="employee-name">Nome Completo:</label>
+                    <input type="text" id="employee-name" placeholder="Digite seu nome">
+                </div>
+                <div class="input-group">
+                    <label for="employee-id">ID do Funcionário:</label>
+                    <input type="text" id="employee-id" placeholder="Digite seu ID">
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão de Registro -->
+        <div class="card">
+            <div class="register-section">
+                <p class="next-action">Próximo registro será de: <span id="next-action-type" class="badge">ENTRADA</span></p>
+                <button id="register-btn" class="register-button" disabled>
+                    <span id="register-icon">🔑</span>
+                    <span id="register-text">Registrar Entrada</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Histórico -->
+        <div class="card">
+            <div class="history-header">
+                <h2>📋 Histórico de Registros (<span id="record-count">0</span>)</h2>
+                <div class="action-buttons">
+                    <button id="export-btn" class="btn-secondary" disabled>📥 Exportar CSV</button>
+                    <button id="clear-btn" class="btn-danger" disabled>🗑️ Limpar Tudo</button>
+                </div>
+            </div>
+            <div id="records-container" class="records-container">
+                <p class="no-records">Nenhum registro encontrado. Registre seu primeiro ponto!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
